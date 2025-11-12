@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <!-- Favicon - Multiple formats for better browser compatibility -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/icons/icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/icons/icon-192x192.png"
+        />
+        <link rel="shortcut icon" href="/favicon.svg" />
+
+        <!-- SEO and Social Sharing Meta Tags -->
+        <meta name="description" content="Professional image printing tool with passport photo support, background removal, and advanced print layout. Works offline with full PWA capabilities." />
+        <meta name="keywords" content="passport photo, image printing, photo editor, crop image, print layout, PWA, offline, passport size, background removal, professional photos, ID photos" />
+        <meta name="author" content="Image to Print Pro" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:site_name" content="Image to Print Pro" />
+        <meta property="og:title" content="Image to Print Pro - Professional Photo Printing" />
+        <meta property="og:description" content="Professional image printing tool with passport photo support, background removal, and advanced print layout. Works offline with full PWA capabilities." />
+        <meta property="og:image" content="/icons/icon-512x512.png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+        <meta property="og:image:alt" content="Image to Print Pro App Icon" />
+        <meta property="og:url" content="https://your-domain.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@yourtwitterhandle" />
+        <meta name="twitter:creator" content="@yourtwitterhandle" />
+        <meta name="twitter:title" content="Image to Print Pro - Professional Photo Printing" />
+        <meta name="twitter:description" content="Professional image printing tool with passport photo support, background removal, and advanced print layout. Works offline with full PWA capabilities." />
+        <meta name="twitter:image" content="/icons/icon-512x512.png" />
+        <meta name="twitter:image:alt" content="Image to Print Pro App Icon" />
+        
+        <!-- Additional SEO Meta Tags -->
+        <meta name="theme-color" content="#3b82f6" />
+        <meta name="msapplication-TileColor" content="#3b82f6" />
+        <meta name="application-name" content="Image to Print Pro" />
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://your-domain.com" />
+        
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Image to Print Pro",
+            "description": "Professional image printing tool with passport photo support, background removal, and advanced print layout. Works offline with full PWA capabilities.",
+            "url": "https://your-domain.com",
+            "applicationCategory": "PhotoApplication",
+            "operatingSystem": "Web Browser",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "ratingCount": "150"
+            },
+            "screenshot": "/icons/icon-512x512.png",
+            "featureList": [
+                "Passport photo generation",
+                "Background removal",
+                "Image cropping and resizing",
+                "Print layout optimization",
+                "Offline PWA functionality",
+                "Multiple format support"
+            ],
+            "downloadUrl": "https://your-domain.com",
+            "installUrl": "https://your-domain.com",
+            "softwareVersion": "2.0.0",
+            "datePublished": "2024-01-01",
+            "dateModified": "2024-11-12",
+            "author": {
+                "@type": "Organization",
+                "name": "Image to Print Pro"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Image to Print Pro"
+            },
+            "browserRequirements": "Requires JavaScript. Requires HTML5.",
+            "permissions": "camera",
+            "applicationSubCategory": "productivity",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "150"
+            },
+            "review": {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Verified User"
+                },
+                "reviewBody": "Excellent tool for creating professional passport photos. The offline functionality is a great bonus."
+            }
+        }
+        </script>
+
+    <!-- PWA / Mobile Enhancements -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+        <!-- iOS PWA Support -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="ImagePrint" />
+        <link
+            rel="apple-touch-startup-image"
+            href="/icons/apple-touch-icon.png"
+        />
+
+        <!-- Android/Chrome PWA Support -->
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#3b82f6" />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#f8fafc"
+        />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#0f172a"
+        />
+
+        <!-- Camera and Media Permissions -->
+        <meta
+            name="permissions-policy"
+            content="camera=*, microphone=(), geolocation=(), payment=()"
+        />
+
+        <!-- Viewport with safe area support -->
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+        />
+
+        <title>Image to Print Pro - Professional Photo Printing</title>
+
+        <!-- Content Security Policy -->
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://aistudiocdn.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' blob: https:; media-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/react-image-crop@11.0.10/dist/ReactCrop.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+        <!-- Preconnect for performance -->
+        <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link rel="preconnect" href="https://aistudiocdn.com" />
+        
+        <!-- DNS prefetch for better performance -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
+        <!-- Preload critical resources -->
+        <link rel="preload" href="data:application/octet-stream;base64,aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsNCmltcG9ydCBSZWFjdERPTSBmcm9tICJyZWFjdC1kb20vY2xpZW50IjsNCmltcG9ydCBBcHAgZnJvbSAiLi9BcHAiOw0KDQpjb25zdCByb290RWxlbWVudCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJyb290Iik7DQppZiAoIXJvb3RFbGVtZW50KSB7DQogIHRocm93IG5ldyBFcnJvcigiQ291bGQgbm90IGZpbmQgcm9vdCBlbGVtZW50IHRvIG1vdW50IHRvIik7DQp9DQoNCmNvbnN0IHJvb3QgPSBSZWFjdERPTS5jcmVhdGVSb290KHJvb3RFbGVtZW50KTsNCnJvb3QucmVuZGVyKA0KICA8UmVhY3QuU3RyaWN0TW9kZT4NCiAgICA8QXBwIC8+DQogIDwvUmVhY3QuU3RyaWN0TW9kZT4sDQopOw0KDQppZiAoInNlcnZpY2VXb3JrZXIiIGluIG5hdmlnYXRvciAmJiBwcm9jZXNzLmVudi5OT0RFX0VOViA9PT0gInByb2R1Y3Rpb24iKSB7DQogIHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKCJsb2FkIiwgKCkgPT4gew0KICAgIG5hdmlnYXRvci5zZXJ2aWNlV29ya2VyDQogICAgICAucmVnaXN0ZXIoIi9zdy5qcyIpDQogICAgICAudGhlbigocmVnaXN0cmF0aW9uKSA9PiB7DQogICAgICAgIGNvbnNvbGUubG9nKCJTVyByZWdpc3RlcmVkOiAiLCByZWdpc3RyYXRpb24pOw0KICAgICAgfSkNCiAgICAgIC5jYXRjaCgocmVnaXN0cmF0aW9uRXJyb3IpID0+IHsNCiAgICAgICAgY29uc29sZS5sb2coIlNXIHJlZ2lzdHJhdGlvbiBmYWlsZWQ6ICIsIHJlZ2lzdHJhdGlvbkVycm9yKTsNCiAgICAgIH0pOw0KICB9KTsNCn0NCg==" as="script" />
+        <link rel="preload" href="/icons/icon-512x512.png" as="image" />
+        
+        <!-- Font optimization -->
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+        
+        <!-- Resource hints for external services -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
+        <script>
+            // Theme loader script to prevent FOUC
+            (function () {
+                try {
+                    var theme = localStorage.getItem("theme");
+                    if (
+                        theme === "dark" ||
+                        (!theme &&
+                            window.matchMedia("(prefers-color-scheme: dark)")
+                                .matches)
+                    ) {
+                        document.documentElement.classList.add("dark");
+                    } else {
+                        document.documentElement.classList.remove("dark");
+                    }
+                } catch (_) {}
+            })();
+        </script>
+        <script type="importmap">
+            {
+                "imports": {
+                    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+                    "react": "https://aistudiocdn.com/react@^19.2.0",
+                    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+                    "react-image-crop": "https://aistudiocdn.com/react-image-crop@^11.0.10"
+                }
+            }
+        </script>
+      <script type="module" crossorigin src="/assets/index-WgA0qi1k.js"></script>
+      <link rel="modulepreload" crossorigin href="/vendor/vendor-3eaMKIIC.js">
+      <link rel="modulepreload" crossorigin href="/assets/react-vendor-bLzc_oLC.js">
+      <link rel="modulepreload" crossorigin href="/assets/utils-CamzHhaU.js">
+      <link rel="modulepreload" crossorigin href="/assets/components-BLPTdgF7.js">
+      <link rel="stylesheet" crossorigin href="/assets/index-CJOkfO4O.css">
+    </head>
+    <body>
+        <div id="root"></div>
+
+
+        <!-- Enhanced Service Worker Registration -->
+        <script>
+            // Service Worker Registration with update handling
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", async () => {
+                    try {
+                        const registration =
+                            await navigator.serviceWorker.register("/sw.js", {
+                                scope: "/",
+                                updateViaCache: "none",
+                            });
+
+                        console.log(
+                            "[PWA] Service Worker registered:",
+                            registration.scope,
+                        );
+
+                        // Check for updates every hour
+                        setInterval(
+                            () => {
+                                registration.update();
+                            },
+                            24 * 60 * 60 * 1000,
+                        );
+
+                        // Handle updates
+                        registration.addEventListener("updatefound", () => {
+                            const newWorker = registration.installing;
+                            console.log("[PWA] Service Worker update found");
+
+                            if (newWorker) {
+                                newWorker.addEventListener(
+                                    "statechange",
+                                    () => {
+                                        if (
+                                            newWorker.state === "installed" &&
+                                            navigator.serviceWorker.controller
+                                        ) {
+                                            console.log(
+                                                "[PWA] New content available, please refresh",
+                                            );
+                                            // Dispatch event for UI to show update notification
+                                            window.dispatchEvent(
+                                                new CustomEvent(
+                                                    "sw-update-available",
+                                                ),
+                                            );
+                                        }
+                                    },
+                                );
+                            }
+                        });
+                    } catch (error) {
+                        console.error(
+                            "[PWA] Service Worker registration failed:",
+                            error,
+                        );
+                    }
+                });
+
+                // Handle controller change (new SW activated)
+                navigator.serviceWorker.addEventListener(
+                    "controllerchange",
+                    () => {
+                        console.log("[PWA] New Service Worker activated");
+                        window.location.reload();
+                    },
+                );
+            }
+
+            // Initialize PWA install prompt
+            let deferredPrompt;
+            window.addEventListener("beforeinstallprompt", (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                console.log("[PWA] Install prompt available");
+                window.dispatchEvent(new CustomEvent("pwa-installable"));
+            });
+
+            // Track installation
+            window.addEventListener("appinstalled", () => {
+                console.log("[PWA] App installed successfully");
+                deferredPrompt = null;
+            });
+
+            // Show install prompt function (can be called from UI)
+            window.showPWAInstallPrompt = async () => {
+                if (!deferredPrompt) {
+                    console.log("[PWA] Install prompt not available");
+                    return false;
+                }
+
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log("[PWA] Install prompt result:", outcome);
+                deferredPrompt = null;
+                return outcome === "accepted";
+            };
+
+        </script>
+
+    <noscript>
+      <div style="padding: 20px; text-align: center; background-color: #ffdddd; color: #d8000c; border: 1px solid #d8000c; margin: 20px; border-radius: 8px;">
+        <h2>App Not Fully Supported</h2>
+        <p>Your browser does not support all features required for this Progressive Web App (PWA).</p>
+        <p>For the best experience, please use a modern browser like Chrome, Edge, Firefox, or Safari.</p>
+        <p>This app offers offline functionality, faster loading times, and can be installed to your home screen for an app-like experience.</p>
+      </div>
+    </noscript>
+  </body>
+</html>

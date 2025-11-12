@@ -1,0 +1,323 @@
+# Commit Message Guidelines
+
+This document defines our commit message standards and best practices for the Image to Print Pro project.
+
+## Table of Contents
+
+- [Why We Have Commit Message Guidelines](#why-we-have-commit-message-guidelines)
+- [The Commit Message Format](#the-commit-message-format)
+- [Commit Types](#commit-types)
+- [Writing Good Commit Messages](#writing-good-commit-messages)
+- [Examples](#examples)
+- [Commit Message Template](#commit-message-template)
+- [Tools and Integration](#tools-and-integration)
+
+## Why We Have Commit Message Guidelines
+
+Good commit messages are essential for:
+
+- **History Understanding**: Making project history comprehensible
+- **Release Generation**: Auto-generating changelogs and release notes
+- **Code Review**: Helping reviewers understand changes quickly
+- **Automation**: Supporting automated processes and tools
+- **Collaboration**: Keeping team members aligned on changes
+- **Debugging**: Making it easier to find and revert problematic changes
+
+## The Commit Message Format
+
+We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+### Format Breakdown
+
+1. **Type**: The kind of change being made
+2. **Scope** (optional): What part of the codebase is affected
+3. **Description**: Short, imperative description of the change
+4. **Body** (optional): Detailed explanation of the change
+5. **Footer** (optional): Breaking changes, issue references, etc.
+
+## Commit Types
+
+### Primary Types
+
+| Type | Description | Example |
+|------|-------------|---------|
+| `feat` | A new feature | `feat(uploader): add drag and drop support` |
+| `fix` | A bug fix | `fix(cropper): resolve memory leak on large images` |
+| `docs` | Documentation only changes | `docs(readme): update installation instructions` |
+| `style` | Code style changes (formatting, etc.) | `style(button): format code with prettier` |
+| `refactor` | Code refactoring (no feature or bug fix) | `refactor(utils): extract common image processing logic` |
+| `perf` | Performance improvements | `perf(canvas): optimize image rendering algorithm` |
+| `test` | Adding or updating tests | `test(components): add unit tests for ImageCropper` |
+| `build` | Build system or dependency changes | `build(deps): upgrade React to v19.2.0` |
+| `ci` | CI/CD configuration changes | `ci(github): add deployment workflow` |
+| `chore` | Maintenance tasks, no production code change | `chore: update commit message guidelines` |
+
+### Special Types
+
+| Type | Description | Example |
+|------|-------------|---------|
+| `BREAKING` or `!` | Breaking changes | `feat!: remove deprecated background removal API` |
+| `revert` | Revert previous commit | `revert: feat(uploader): add drag and drop support` |
+| `merge` | Merge commits | `merge: feature/new-ui into main` |
+
+### Types to Avoid
+
+- `wtf` - Unprofessional and not helpful
+- `asdf` - Test commits, should be avoided
+- `hacked` - Unprofessional
+- `tmp` or `temp` - Temporary commits should be squashed
+
+## Writing Good Commit Messages
+
+### Guidelines
+
+1. **Use present tense**: "Add feature" not "Added feature"
+2. **Use imperative mood**: "Fix bug" not "Fixes bug"
+3. **Limit subject line to 50 characters**
+4. **Capitalize only the first letter** (unless proper noun)
+5. **No period at the end** of the subject line
+6. **Wrap body at 72 characters**
+7. **Explain what and why**, not just what changed
+8. **Use bullet points** for complex changes
+9. **Reference issues and PRs** in footer
+
+### Good vs Bad Examples
+
+```bash
+# ❌ Bad
+git commit -m "Fixed bug in uploader"
+
+# ✅ Good
+git commit -m "fix(uploader): resolve memory leak when uploading large images
+
+The uploader component was not properly cleaning up canvas elements after 
+processing large images, causing memory leaks. This adds proper cleanup 
+in the useEffect cleanup function.
+
+Fixes #123"
+```
+
+```bash
+# ❌ Bad
+git commit -m "update deps"
+
+# ✅ Good
+git commit -m "build(deps): upgrade React to v19.2.0 and TypeScript to v5.8.2
+
+Upgrade to latest stable versions for improved performance and bug fixes.
+Includes breaking changes in React 19 that require component updates."
+
+# ❌ Bad
+git commit -m "add feature for cropping"
+
+# ✅ Good
+git commit -m "feat(cropper): add custom aspect ratio support for passport photos
+
+- Add custom size input field
+- Implement aspect ratio validation
+- Update UI to show custom size preview
+- Add validation for minimum/maximum dimensions
+
+Closes #45"
+```
+
+## Examples
+
+### Feature Implementation
+```bash
+feat(background-removal): add AI-powered background detection
+
+Implement advanced background removal using edge detection algorithms.
+Supports transparent background generation for professional use.
+
+- Add EdgeDetectionService for identifying background regions
+- Implement flood-fill algorithm for background replacement
+- Add configuration options for sensitivity and edge threshold
+- Update UI to show before/after comparison
+
+BREAKING CHANGE: backgroundRemoval API has changed signature
+Fixes #78
+Refs #45
+```
+
+### Bug Fix
+```bash
+fix(canvas): resolve memory leak in image processing
+
+Canvas elements were not being properly cleaned up after image processing,
+causing memory accumulation in long-running sessions.
+
+- Add canvas cleanup in useEffect hooks
+- Implement proper canvas disposal pattern
+- Add memory monitoring to track leak fixes
+
+Fixes #123
+```
+
+### Documentation Update
+```bash
+docs(contributing): add commit message guidelines section
+
+Added comprehensive commit message guidelines to help contributors
+write clear, consistent commit messages.
+
+- Link to Conventional Commits specification
+- Include examples for each commit type
+- Add troubleshooting section for common issues
+
+Closes #234
+```
+
+### Refactoring
+```bash
+refactor(utils): extract common image processing logic
+
+Extracted reusable image processing utilities to improve code 
+maintainability and reduce duplication.
+
+- Create ImageProcessor class with common methods
+- Move image validation logic to shared utility
+- Update all components to use new shared logic
+- Add comprehensive tests for new utilities
+
+This improves maintainability and makes it easier to add new 
+image processing features in the future.
+```
+
+### Performance Improvement
+```bash
+perf(uploader): optimize image processing pipeline
+
+Implement lazy loading and web workers for image processing to improve
+app responsiveness during large file uploads.
+
+- Add web worker for background image processing
+- Implement progressive image loading for preview
+- Add debouncing for preview updates
+- Optimize canvas operations with typed arrays
+
+Improves upload performance by 40% for large images.
+```
+
+## Commit Message Template
+
+You can set up a commit message template for consistency:
+
+```bash
+# Create template file
+git config commit.template .gitmessage
+
+# Template content:
+# <type>[optional scope]: <subject>
+#
+# [optional body]
+#
+# [optional footer]
+
+# Examples:
+# feat(uploader): add drag and drop support
+#
+# Implement drag and drop functionality for the image uploader
+# component with proper accessibility support.
+#
+# - Add drop zone with visual feedback
+# - Implement file validation and error handling
+# - Add keyboard navigation support
+# - Include unit and integration tests
+#
+# Fixes #123
+# Closes #456
+```
+
+## Tools and Integration
+
+### VS Code Extension
+Install [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) for VS Code.
+
+### Git Hooks
+Set up commit message validation:
+
+```bash
+# Install husky for git hooks
+npm install --save-dev husky
+
+# Add to package.json scripts
+{
+  "scripts": {
+    "commit": "git-cz",
+    "prepare": "husky install"
+  }
+}
+
+# Set up commit message validation
+npx husky add .husky/commit-msg 'npx --no-install commitlint --edit $1'
+```
+
+### Commitizen (Interactive CLI)
+```bash
+# Install commitizen for interactive commits
+npm install --save-dev commitizen
+
+# Configure for Conventional Commits
+npx commitizen init cz-conventional-changelog --save-dev --save-exact
+
+# Use interactive commit messages
+npm run commit
+```
+
+### Commitlint (Linting)
+```bash
+# Install commitlint
+npm install --save-dev @commitlint/cli @commitlint/config-conventional
+
+# Create commitlint.config.js
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'header-min-length': [2, 'always', 10],
+    'header-max-length': [2, 'always', 72],
+    'header-case': [2, 'never', ['lower-case']],
+  }
+}
+```
+
+## Quick Reference
+
+### Common Commit Types
+- `feat` - New feature
+- `fix` - Bug fix
+- `docs` - Documentation
+- `style` - Formatting
+- `refactor` - Code restructuring
+- `test` - Adding tests
+- `chore` - Maintenance
+
+### Subject Line Rules
+- ✅ Keep under 50 characters
+- ✅ Use present tense ("Add" not "Added")
+- ✅ Don't end with period
+- ✅ Be descriptive but concise
+
+### Footer Rules
+- ✅ Reference issues: "Closes #123"
+- ✅ Reference PRs: "Refs #456"
+- ✅ Breaking changes: "BREAKING CHANGE: description"
+
+### Remember
+1. **Write for humans first**, tools second
+2. **Be consistent** with the team
+3. **Use templates** to maintain consistency
+4. **Review before pushing** - double-check your messages
+5. **Ask for help** if unsure about the appropriate type or scope
+
+---
+
+**Happy committing!** 🎯

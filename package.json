@@ -1,0 +1,93 @@
+{
+  "name": "image-to-print",
+  "version": "2.0.0",
+  "description": "A powerful Progressive Web App (PWA) for formatting images for printing. Crop to passport sizes, add borders, arrange on A4 sheets with ease - now with a beautiful soft minimalistic UI!",
+  "private": false,
+  "type": "module",
+  "homepage": "https://image-to-print.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/image-to-print.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/image-to-print/issues"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "pwa",
+    "image-processing",
+    "passport-photo",
+    "print-layout",
+    "canvas",
+    "crop",
+    "background-removal",
+    "vercel",
+    "tailwindcss"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com",
+    "url": "https://your-website.com"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:host": "vite --host",
+    "build": "tsc && vite build",
+    "build:analyze": "npm run build -- --mode analyze",
+    "build:prod": "npm run build",
+    "build:staging": "vite build --mode staging",
+    "preview": "vite preview",
+    "preview:prod": "npm run preview -- --host",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "clean:all": "rimraf dist node_modules/.vite",
+    "deploy:vercel": "npm run build && vercel --prod",
+    "deploy:preview": "npm run build && vercel"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-image-crop": "^11.0.10"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "postcss": "^8.4.49",
+    "rimraf": "^5.0.0",
+    "terser": "^5.44.0",
+    "ts-jest": "^29.4.5",
+    "typescript": "~5.8.2",
+    "typescript-eslint": "^8.46.2",
+    "vite": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

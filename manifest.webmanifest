@@ -1,0 +1,116 @@
+{
+  "name": "Image to Print Pro",
+  "short_name": "ImagePrint",
+  "description": "Professional image printing tool with passport photo support, background removal, and advanced print layout. Works offline with full PWA capabilities.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f8fafc",
+  "theme_color": "#3b82f6",
+  "prefer_related_applications": false,
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["productivity", "photo", "utilities", "graphics"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Upload Photo",
+      "short_name": "Upload",
+      "description": "Upload a new photo to process",
+      "url": "/?action=upload",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Camera Capture",
+      "short_name": "Camera",
+      "description": "Take photo using device camera",
+      "url": "/?action=camera",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Recent Projects",
+      "short_name": "Recent",
+      "description": "View recent print projects",
+      "url": "/?action=recent",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "image/*": [".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp", ".tiff"]
+      }
+    }
+  ],
+  "display_override": ["standalone", "minimal-ui"],
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  }
+}
